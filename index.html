@@ -216,7 +216,10 @@
                     wrapper: document.getElementById('bodymovin3'),
                     animType: 'svg',
                     loop: true,
-                    autoplay: true,
+                    autoplay: false,
+                    rendererSettings: {
+                      Progressiveload:true,
+                    },
                     path: 'Music Header.json'
             
                 };
