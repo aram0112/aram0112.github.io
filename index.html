@@ -216,23 +216,14 @@
                 var animData = {
                     wrapper: document.getElementById('bodymovin3'),
                     animType: 'svg',
-                    loop: false,
-                    autoplay: false,
-                    renderersettings: {
-                        progressiveLoad:false
-                    },   
-                    path: 'Music Header.json',
-                    name:'Music Header',
+                    loop: true,
+                    autoplay: true,
+
+                    path: 'Music Header.json'
             
                 };
-                anim = bodymovin.loadAnimation(animData);
-                var waypoint = new waypoint({
-                  element: document.getElementById('bodymovin3'),
-                  handler:function() {
-                    anim.play();
-                  },
-                  offset: 100
-                })
+                var anim = bodymovin.loadAnimation(animData);
+                bodymovin.setSubframeRendering(true);
             </script>
             <p class="subtitle-a">
               Self-Produced with plenty of inspirations.
