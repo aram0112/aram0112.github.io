@@ -61,20 +61,7 @@
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll" href="#page-top">
-        <div style="width:30%;height:30%;" id="bodymovin2"></div>
-
-        <script>
-            var animData = {
-                wrapper: document.getElementById('bodymovin2'),
-                animType: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'rmbs logo.json'
-        
-            };
-            var anim = bodymovin.loadAnimation(animData);
-            bodymovin.setSubframeRendering(true);
-        </script>
+        r m b s Media
       </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +102,21 @@
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4"> r m b s Media
+          <h1 class="intro-title mb-4"> 
+              <div style="width:50%;height:50%;" id="bodymovin2"></div>
+
+              <script>
+                  var animData = {
+                      wrapper: document.getElementById('bodymovin2'),
+                      animType: 'svg',
+                      loop: true,
+                      autoplay: true,
+                      path: 'rmbs logo.json'
+              
+                  };
+                  var anim = bodymovin.loadAnimation(animData);
+                  bodymovin.setSubframeRendering(true);
+              </script>
 
           </h1>
           <p class="intro-subtitle"><span class="text-slider-items">Music,Video Editing,Livestreaming,Motion Graphics,Podcasts</span><strong class="text-slider"></strong></p>
