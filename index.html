@@ -47,8 +47,7 @@
 
 </style>
 <script src="bodymovin.js" type="text/javascript"></script>
-<script src="/lib/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-
+<script src="/js/jquery.waypoints.js" type="text/javascript"></script>
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
@@ -205,6 +204,7 @@
     </div>
   </section>
 
+
   <!--/ Section Services Star /-->
   <section id="service" class="services-mf route">
     <div class="container">
@@ -214,17 +214,32 @@
             <div style="width:50%;height:50%;margin:auto;" id="bodymovin3"></div>
 
             <script>
+              var anim;
+              var elem = document.getElementById('Music')
                 var animData = {
                     wrapper: document.getElementById('bodymovin3'),
                     animType: 'svg',
-                    loop: true,
-                    autoplay: true,
-
-                    path: 'Music Header.json'
+                    loop: false,
+                    autoplay: false,
+                    renderersettings: {
+                      progressiveload: false
+                    },
+                    path: 'Music Header.json',
+                    name: 'Music',
             
                 };
-                var anim = bodymovin.loadAnimation(animData);
+                anim = bodymovin.loadAnimation(animData);
                 bodymovin.setSubframeRendering(true);
+                
+                var waypoint = new Waypoint({
+ element: document.getElementById('Music'),
+ handler: function(direction) {direction=== 'down'
+ anim.goToandPlay(1,true);   /*THIS IS WHERE WE PLAY THE ANIMATION*/
+ },
+   offset: 'bottom-in-view' /* string defined in waypoint.js See documentation for more presets */
+})
+
+                
             </script>
             <p class="subtitle-a">
               Self-Produced with plenty of inspirations.
