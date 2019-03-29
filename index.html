@@ -889,7 +889,20 @@
         <div class="col-sm-12">
           <div class="title text-center">
             <h3 class="title-a">
-              Livestreams
+                <div style="width:45%;height:45%;" id="bodymovin5"></div>
+
+                <script>
+                    var animData = {
+                        wrapper: document.getElementById('bodymovin5'),
+                        animType: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        path: 'Livestream Header.json'
+                
+                    };
+                    var anim = bodymovin.loadAnimation(animData);
+                    bodymovin.setSubframeRendering(true);
+                </script>
             </h3>
             <p class="subtitle-a">
               A newer pursuit. 
