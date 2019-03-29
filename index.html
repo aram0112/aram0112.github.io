@@ -214,8 +214,6 @@
             <div style="width:50%;height:50%;margin:auto;" id="bodymovin3"></div>
 
             <script>
-              var anim;
-              var elem = document.getElementById('Music')
                 var animData = {
                     wrapper: document.getElementById('bodymovin3'),
                     animType: 'svg',
@@ -224,22 +222,11 @@
                     renderersettings: {
                       progressiveload: false
                     },
-                    path: 'Music Header.json',
-                    name: 'Music',
+                    path: 'Music Header.json'
             
                 };
-                anim = bodymovin.loadAnimation(animData);
+                var anim = bodymovin.loadAnimation(animData);
                 bodymovin.setSubframeRendering(true);
-                
-                var waypoint = new Waypoint({
- element: document.getElementById('Music'),
- handler: function(direction) {direction=== 'down'
- anim.goToandPlay(1,true);   /*THIS IS WHERE WE PLAY THE ANIMATION*/
- },
-   offset: 'bottom-in-view' /* string defined in waypoint.js See documentation for more presets */
-})
-
-                
             </script>
             <p class="subtitle-a">
               Self-Produced with plenty of inspirations.
