@@ -613,7 +613,20 @@
             <div class="col-sm-12">
               <div class="title-box text-center">
                 <h3 class="title-a">
-                  Motion Graphics
+                    <div style="width:50%;height:50%;margin:auto;" id="bodymovin4"></div>
+
+                    <script>
+                        var animData = {
+                            wrapper: document.getElementById('bodymovin4'),
+                            animType: 'svg',
+                            loop: true,
+                            autoplay: true,
+                            path: 'Motion Header.json'
+                    
+                        };
+                        var anim = bodymovin.loadAnimation(animData);
+                        bodymovin.setSubframeRendering(true);
+                    </script>
                 </h3>
                 <p class="subtitle-a">
                   Moving towards more dynamic media. 
