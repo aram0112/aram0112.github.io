@@ -24,19 +24,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-  <script
-  src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/js/okta-sign-in.min.js"
-  type="text/javascript"></script>
-<link
-  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-sign-in.min.css"
-  type="text/css"
-  rel="stylesheet"/>
 
-<!-- Theme file: Customize or replace this file if you want to override our default styles -->
-<link
-  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css"
-  type="text/css"
-  rel="stylesheet"/>
   <style>
     body{
         background-color:#fff;
@@ -45,7 +33,6 @@
         overflow-x: hidden;
         overflow-y: visible
     }
-    
     #bodymovin{
         background-color:#ffffff00;
         width:100%;
@@ -57,130 +44,7 @@
         opacity: 1;
         margin: auto;
     }
-    .navbar-header.col {
-		padding: 0 !important;
-	}	
-	
-    .search-box input {
-        padding-right: 35px;
-		border-color: #dfe3e8;
-        border-radius: 4px !important;
-		box-shadow: none
-    }
 
-	.navbar ul.nav li.active a, .navbar ul.nav li.open > a {
-		background: transparent !important;
-	}	
-
-	.navbar ul.nav li.open > a.get-started-btn {
-		color: #fff;
-		background: #31bfb1 !important;
-	}
-
-
-	}
-	.navbar .dropdown-menu.form-wrapper a {		
-		color: #33cabb;
-		padding: 0 !important;
-	}
-	.navbar .dropdown-menu.form-wrapper a:hover{
-		text-decoration: underline;
-	}
-	.navbar .form-wrapper .hint-text {
-		text-align: center;
-		margin-bottom: 15px;
-		font-size: 13px;
-	}
-	.navbar .form-wrapper .social-btn .btn, .navbar .form-wrapper .social-btn .btn:hover {
-		color: #fff;
-        margin: 0;
-		padding: 0 !important;
-		font-size: 13px;
-		border: none;
-		transition: all 0.4s;
-		text-align: center;
-		line-height: 34px;
-		width: 47%;
-		text-decoration: none;
-    }	
-	.navbar .social-btn .btn-primary {
-		background: #0078ff;
-	}
-	.navbar .social-btn .btn-primary:hover {
-		background: #0078ff;
-	}
-	.navbar .social-btn .btn-info {
-		background: #64ccf1;
-	}
-	.navbar .social-btn .btn-info:hover {
-		background: #4ec7ef;
-	}
-	.navbar .social-btn .btn i {
-		margin-right: 5px;
-		font-size: 16px;
-		position: relative;
-		top: 2px;
-	}
-	.navbar .form-wrapper .form-footer {
-		text-align: center;
-		padding-top: 10px;
-		font-size: 13px;
-	}
-	.navbar .form-wrapper .form-footer a:hover{
-		text-decoration: underline;
-	}
-	.navbar .form-wrapper .checkbox-inline input {
-		margin-top: 3px;
-	}
-	.or-seperator {
-        margin-top: 32px;
-		text-align: center;
-		border-top: 1px solid #e0e0e0;
-    }
-    .or-seperator b {
-		color: #666;
-        padding: 0 8px;
-		width: 30px;
-		height: 30px;
-		font-size: 13px;
-		text-align: center;
-		line-height: 26px;
-		background: #fff;
-		display: inline-block;
-		border: 1px solid #e0e0e0;
-		border-radius: 50%;
-		position: relative;
-		top: -15px;
-		z-index: 1;
-    }
-    .navbar .checkbox-inline {
-		font-size: 13px;
-	}
-	.navbar .navbar-right .dropdown-toggle::after {
-		display: none;
-	}
-	@media (min-width: 1200px){
-		.form-inline .input-group {
-			width: 300px;
-			margin-left: 30px;
-		}
-	}
-	@media (max-width: 768px){
-		.navbar .dropdown-menu.form-wrapper {
-			width: 100%;
-			padding: 10px 15px;
-			background: transparent;
-			border: none;
-		}
-		.navbar .form-inline {
-			display: block;
-		}
-		.navbar .input-group {
-			width: 100%;
-		}
-		.navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
-			display: block;
-		}
 </style>
 <script src="bodymovin.js" type="text/javascript"></script>
 <script src="/js/jquery.waypoints.js" type="text/javascript"></script>
@@ -191,63 +55,6 @@
     License: https://bootstrapmade.com/license/
   ======================================================= -->
 </head>
-
-
-<script type="text/javascript">
-  var oktaSignIn = new OktaSignIn({
-    baseUrl: "https://dev-361053.okta.com",
-    clientId: "0oaf476pz34i5l0Ix356",
-    authParams: {
-      issuer: "https://dev-361053.okta.com/oauth2/default",
-      responseType: ['token', 'id_token'],
-      display: 'page'
-    }
-  });
-  if (oktaSignIn.token.hasTokensInUrl()) {
-    oktaSignIn.token.parseTokensFromUrl(
-      function success(res) {
-        // The tokens are returned in the order requested by `responseType` above
-        var accessToken = res[0];
-        var idToken = res[1]
-
-        // Say hello to the person who just signed in:
-        console.log('Hello, ' + idToken.claims.email);
-
-        // Save the tokens for later use, e.g. if the page gets refreshed:
-        oktaSignIn.tokenManager.add('accessToken', accessToken);
-        oktaSignIn.tokenManager.add('idToken', idToken);
-
-        // Remove the tokens from the window location hash
-        window.location.hash='';
-      },
-      function error(err) {
-        // handle errors as needed
-        console.error(err);
-      }
-    );
-  } else {
-    oktaSignIn.session.get(function (res) {
-      // Session exists, show logged in state.
-      if (res.status === 'ACTIVE') {
-        console.log('Welcome back, ' + res.login);
-        return;
-      }
-      // No session, show the login form
-      oktaSignIn.renderEl(
-        { el: '#log-in-container' },
-        function success(res) {
-          // Nothing to do in this case, the widget will automatically redirect
-          // the user to Okta for authentication, then back to this page if successful
-        },
-        function error(err) {
-          // handle errors as needed
-          console.error(err);
-        }
-      );
-    });
-  }
-</script>
-
 
 <body id="page-top">
 
@@ -285,38 +92,6 @@
             <a class="nav-link js-scroll" href="#contact">Livestreams</a>
           </li>
         </ul>
-          <ul class="nav navbar-nav navbar-right ml-auto">			
-            <li class="nav-item">
-              <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
-              <ul class="dropdown-menu form-wrapper">					
-                <li>
-                  <div id="log-in-container"></div>
-                </li>
-              </ul>
-            <li class="nav-item">
-              <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign up</a>
-              <ul class="dropdown-menu form-wrapper">					
-                <li>
-                  <form action="/examples/actions/confirmation.php" method="post">
-                    <p class="hint-text">Fill in this form to create your account!</p>
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Username" required="required">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Password" required="required">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Confirm Password" required="required">
-                    </div>
-                    <div class="form-group">
-                      <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
-                    </div>
-                    <input type="submit" class="btn btn-primary btn-block" value="Sign up">
-                  </form>
-                </li>
-              </ul>
-            </li>
-          </ul>
       </div>
     </div>
   </nav>
