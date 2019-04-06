@@ -210,8 +210,6 @@
                 }, anim, tl;
                 var anim = bodymovin.loadAnimation(animData);
                 anim.EventListener('DOMLoaded',onDOMLoaded);
-                bodymovin.setSubframeRendering(true);
-
                 function onDOMLoaded(e){
                     tl = new TimelineMax({});
 tl.to({frame:0}, 3, {
