@@ -1276,3 +1276,73 @@ footer .credits a {
     bottom: 15px;
   }
 }
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingBox {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+}
+
+.boxes {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.screenshot {
+    display: flex;
+    width: 100%
+}
+
+.screen-heading {
+    margin: 10px;
+}
+
+.screen-heading-2 {
+    margin: 10px;
+    display: flex;
+    text-align: center;
+}
+
+.box-2 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
